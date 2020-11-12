@@ -5,20 +5,12 @@ services:
 # setting single-port bindings to force HTTP because Spring Boot Admin doesn't trust the ASP.NET Core Certificates
 - name: musicstoreservice
   project: src/MusicStoreService/MusicStoreService.csproj
-  bindings:
-  - port: 5010
 - name: orderservice
   project: src/OrderService/OrderService.csproj
-  bindings:
-  - port: 5020
 - name: shoppingcartservice
   project: src/ShoppingCartService/ShoppingCartService.csproj
-  bindings:
-  - port: 5030
 - name: musicstoreui
   project: src/MusicStoreUI/MusicStoreUI.csproj
-  bindings:
-  - port: 5000
   env:
     - name: USE_REDIS_CACHE
       value: true

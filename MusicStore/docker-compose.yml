@@ -22,11 +22,13 @@ services:
        - "8889:8080"
      depends_on:
        - eurekaserver
-  sqlserver:
-    image: "mcr.microsoft.com/mssql/server"
+  mysql:
+    image: mysql:5.7
     environment:
-      MSSQL_SA_PASSWORD: "SteeltoeR0cks"
-      ACCEPT_EULA: "Y"
+      MYSQL_ROOT_PASSWORD: steeltoe
+      MYSQL_DATABASE: steeltoe2
+      MYSQL_USER: steeltoe
+      MYSQL_PASSWORD: steeltoe
     depends_on:
       - configserver
       - eurekaserver
